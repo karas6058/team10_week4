@@ -13,20 +13,20 @@ public class Calculator {
 	}
 	
 	public double goldCost(int minutes, int numberOfLines){
-		double total_cost = 0;
+		double totalCost = 0;
 		
 		if(minutes<=1000){
-			total_cost = GOLD;
+			totalCost = gold;
 		} else {
-			total_cost = GOLD + (minutes-1000)*GOLD_RATE_PER_EXECESS_MINUTES;
+			totalCost = gold + (minutes-1000)*gold_rate_per_excess_minutes;
 		}		
 		if(numberOfLines<4){
-			total_cost = total_cost + (numberOfLines-1)*GOLD_RATE_PER_ADDITIONAL_LINE;
+			totalCost = totalCost + (numberOfLines-1)*gold_rate_per_additional_line;
 		} else {
-			total_cost = total_cost + 2*GOLD_RATE_PER_ADDITIONAL_LINE + (numberOfLines-3)*FAMILY_DISCOUNT;
+			totalCost = totalCost + 2*gold_rate_per_additional_line + (numberOfLines-3)*family_discount;
 		}
-		return total_cost;	
-			
+		return totalCost;	
+		
 	}
 	
 	public double silverCost(int minutes, int numberOfLines){
