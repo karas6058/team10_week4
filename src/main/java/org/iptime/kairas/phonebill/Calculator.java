@@ -9,9 +9,6 @@ public class Calculator {
 	public static final double SILVER_RATE_PER_EXECESS_MINUTES = 0.54;
 	public static final double FAMILY_DISCOUNT = 5;
 	
-	public Calculator(){
-	}
-	
 	public double goldCost(int minutes, int numberOfLines){
 		double totalCost;
 		
