@@ -20,9 +20,25 @@ public class Calculator {
 	}
 	
 	public double silverCost(int minutes, int numberOfLines){
+		double totalCost;
+			
+		if (minutes > 500)
+		{
+			totalCost = (minutes-500)*silver_rate_per_excess_minutes;
+		}
+		else{
+			totalCost=silver;
+		}
 		
+		if(numberOfLines < 4)
+		{
+			totalCost += (numberOfLines-1)*21.5;
+		}
+		else{
+			totalCost += 21.5*2 + (numberOfLines-3)*family_discount;
+		}
 		
-		
-		return 0;
+				
+		return totalCost;
 	}
 }
