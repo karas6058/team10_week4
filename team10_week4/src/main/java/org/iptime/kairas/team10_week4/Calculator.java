@@ -36,10 +36,10 @@ public class Calculator {
 			
 		if (minutes > 500)
 		{
-			totalCost = (minutes-500)*silver_rate_per_excess_minutes;
+			totalCost = silver + (minutes-500)*silver_rate_per_excess_minutes;
 		}
 		else{
-			totalCost=silver;
+			totalCost = silver;
 		}
 		
 		if(numberOfLines < 4)
