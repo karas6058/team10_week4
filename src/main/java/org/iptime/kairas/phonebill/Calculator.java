@@ -16,17 +16,17 @@ public class Calculator {
 		double totalCost = 0;
 		
 		if(minutes<=1000){
-			totalCost = gold;
+			totalCost = GOLD;
 		} else {
-			totalCost = gold + (minutes-1000)*gold_rate_per_excess_minutes;
+			totalCost = GOLD + (minutes-1000)*GOLD_RATE_PER_EXECESS_MINUTES;
 		}		
 		if(numberOfLines<4){
-			totalCost = totalCost + (numberOfLines-1)*gold_rate_per_additional_line;
+			totalCost = totalCost + (numberOfLines-1)*GOLD_RATE_PER_ADDITIONAL_LINE;
 		} else {
-			totalCost = totalCost + 2*gold_rate_per_additional_line + (numberOfLines-3)*family_discount;
+			totalCost = totalCost + 2*GOLD_RATE_PER_ADDITIONAL_LINE + (numberOfLines-3)*FAMILY_DISCOUNT;
 		}
 		return totalCost;	
-		
+			
 	}
 	
 	public double silverCost(int minutes, int numberOfLines){
