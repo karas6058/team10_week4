@@ -4,5 +4,5 @@
 ##MEMBER
 ##Bark WonHo	(kairas83)
 ##Hong SangGi	(sanggihong)
-##Yoon HyunGyu
+##Yoon HyunGyu (yoonhg)
 ##Choi HyunWoo
