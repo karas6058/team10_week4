@@ -1,4 +1,4 @@
-package org.iptime.kairas.team10_week4;
+package org.iptime.kairas.phonebill;
 
 public class Calculator {
 	final double gold = 49.95;
