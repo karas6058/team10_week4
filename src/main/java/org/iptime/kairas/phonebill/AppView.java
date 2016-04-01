@@ -1,12 +1,16 @@
 package org.iptime.kairas.phonebill;
 
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class AppView {
 	private Scanner scan;
+	private Logger log;
 	
 	public AppView(){
 		scan = new Scanner(System.in);
+		log = Logger.getLogger("MyLogger");
 	}
 	
 	public int inputInt(){
@@ -18,6 +22,6 @@ public class AppView {
 	}
 	
 	public void outputString(String output){
-		System.out.print(output);
+		log.log(Level.INFO, output);
 	}
 }
