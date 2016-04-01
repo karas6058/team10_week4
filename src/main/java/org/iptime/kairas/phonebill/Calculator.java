@@ -31,7 +31,7 @@ public class Calculator {
 			
 		if (minutes > 500)
 		{
-			totalCost = SILVER + (minutes-500)*SILVER_RATE_PER_ADDITIONAL_LINE;
+			totalCost = SILVER + (minutes-500)*SILVER_RATE_PER_EXECESS_MINUTES;
 		}
 		else{
 			totalCost = SILVER;
