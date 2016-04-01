@@ -27,6 +27,6 @@ public class App
     	else if ("silver".equals(plan))
     		bill = cal.silverCost(time, line);
     	
-    	test.outputString(""+bill);
+    	test.outputString(Double.toString(bill));
     }
 }
