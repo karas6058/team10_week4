@@ -3,6 +3,8 @@ package org.iptime.kairas.team10_week4;
 public class Calculator {
 	final double gold = 49.95;
 	final double silver = 29.95;
+	final double gold_rate_per_additional_line = 14.5;
+	final double silver_rate_per_additionla_line = 21.5;
 	final double gold_rate_per_excess_minutes = 0.45;
 	final double silver_rate_per_excess_minutes = 0.54;
 	final double family_discount = 5;
@@ -34,18 +36,18 @@ public class Calculator {
 			
 		if (minutes > 500)
 		{
-			totalCost = (minutes-500)*silver_rate_per_excess_minutes;
+			totalCost = silver + (minutes-500)*silver_rate_per_excess_minutes;
 		}
 		else{
-			totalCost=silver;
+			totalCost = silver;
 		}
 		
 		if(numberOfLines < 4)
 		{
-			totalCost += (numberOfLines-1)*21.5;
+			totalCost += (numberOfLines-1)*silver_rate_per_additionla_line;
 		}
 		else{
-			totalCost += 21.5*2 + (numberOfLines-3)*family_discount;
+			totalCost += silver_rate_per_additionla_line*2 + (numberOfLines-3)*family_discount;
 		}
 		
 				
