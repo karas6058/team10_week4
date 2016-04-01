@@ -13,7 +13,7 @@ public class Calculator {
 	}
 	
 	public double goldCost(int minutes, int numberOfLines){
-		double totalCost = 0;
+		double totalCost;
 		
 		if(minutes<=1000){
 			totalCost = GOLD;
