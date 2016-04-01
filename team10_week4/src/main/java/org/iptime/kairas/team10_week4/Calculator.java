@@ -1,18 +1,13 @@
 package org.iptime.kairas.team10_week4;
 
 public class Calculator {
-	double gold;
-	double silver;
-	double gold_rate_per_excess_minutes;
-	double silver_rate_per_excess_minutes;
-	double family_discount;
+	final double gold = 49.95;
+	final double silver = 29.95;
+	final double gold_rate_per_excess_minutes = 0.45;
+	final double silver_rate_per_excess_minutes = 0.54;
+	final double family_discount = 5;
 	
 	public Calculator(){
-		gold = 49.95;
-		silver = 29.95;
-		gold_rate_per_excess_minutes = 0.45;
-		silver_rate_per_excess_minutes = 0.54;
-		family_discount = 5;
 	}
 	
 	public double goldCost(){
