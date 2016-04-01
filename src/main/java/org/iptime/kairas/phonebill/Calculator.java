@@ -1,13 +1,13 @@
 package org.iptime.kairas.phonebill;
 
 public class Calculator {
-	final double gold = 49.95;
-	final double silver = 29.95;
-	final double gold_rate_per_additional_line = 14.5;
-	final double silver_rate_per_additionla_line = 21.5;
-	final double gold_rate_per_excess_minutes = 0.45;
-	final double silver_rate_per_excess_minutes = 0.54;
-	final double family_discount = 5;
+	public static final double gold = 49.95;
+	public static final double silver = 29.95;
+	public static final double gold_rate_per_additional_line = 14.5;
+	public static final double silver_rate_per_additionla_line = 21.5;
+	public static final double gold_rate_per_excess_minutes = 0.45;
+	public static final double silver_rate_per_excess_minutes = 0.54;
+	public static final double family_discount = 5;
 	
 	public Calculator(){
 	}
