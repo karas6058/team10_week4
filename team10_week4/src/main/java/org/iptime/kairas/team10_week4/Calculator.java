@@ -10,7 +10,22 @@ public class Calculator {
 	public Calculator(){
 	}
 	
-	public double goldCost(){
+	public double goldCost(int minutes, int numberOfLines){
+		double total_cost = 0;
+		
+		if(minutes<1000 && numberOfLines<4){
+			total_cost = gold +  
+		}
+		else if(minutes<1000 && numberOfLines>=4){
+			
+		}
+		else if(minutes>=1000 && numberOfLines<4){
+			
+		}else if(minutes>=1000 && numberOfLines>=4){
+			
+			
+		}
+		
 		return 0;
 	}
 	
