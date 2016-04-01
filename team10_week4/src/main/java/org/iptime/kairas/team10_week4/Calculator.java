@@ -15,17 +15,15 @@ public class Calculator {
 	public double goldCost(int minutes, int numberOfLines){
 		double total_cost = 0;
 		
-		
 		if(minutes<=1000){
 			total_cost = gold;
 		} else {
 			total_cost = gold + (minutes-1000)*gold_rate_per_excess_minutes;
-		}
-		
+		}		
 		if(numberOfLines<4){
-			total_cost = total_cost +numberOfLines*14.50;
+			total_cost = total_cost + (numberOfLines-1)*gold_rate_per_additional_line;
 		} else {
-			total_cost = total_cost + 2*14.50 + (numberOfLines-3)*family_discount;
+			total_cost = total_cost + 2*gold_rate_per_additional_line + (numberOfLines-3)*family_discount;
 		}
 		return total_cost;	
 			
