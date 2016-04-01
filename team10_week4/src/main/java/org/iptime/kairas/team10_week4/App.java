@@ -20,7 +20,7 @@ public class App
     	String plan = test.inputString();
     	
     	Calculator cal = new Calculator();
-    	float bill = 0;
+    	double bill = 0;
     	
     	switch (plan) {
     		case"gold":
