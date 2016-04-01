@@ -22,9 +22,9 @@ public class App
     	Calculator cal = new Calculator();
     	double bill = 0;
     	
-    	if (plan.equals("gold")) 
+    	if ("gold".equals(plan)) 
     		bill = cal.goldCost(time, line);
-    	else if (plan.equals("silver"))
+    	else if ("silver".equals(plan))
     		bill = cal.silverCost(time, line);
     	
     	test.outputString(""+bill);
