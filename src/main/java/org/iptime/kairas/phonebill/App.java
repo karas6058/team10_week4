@@ -6,6 +6,9 @@ package org.iptime.kairas.phonebill;
  */
 public class App 
 {
+	public App(){
+		//define Constructor
+	}
     public static void main( String[] args )
     {
     	AppView test = new AppView();
