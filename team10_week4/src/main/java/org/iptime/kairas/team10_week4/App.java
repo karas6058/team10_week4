@@ -22,15 +22,10 @@ public class App
     	Calculator cal = new Calculator();
     	double bill = 0;
     	
-    	switch (plan) {
-    		case"gold":
-    			bill = cal.goldCost();
-    			break;
-    	
-    		case"silver":
-    			bill = cal.silverCost();
-    			break;
-    	}
+    	if (plan == "gold") 
+    		bill = cal.goldCost(time, line);
+    	else if (plan == "silver")
+    		bill = cal.silverCost(time, line);
     	
     	test.outputString(""+bill);
     }
