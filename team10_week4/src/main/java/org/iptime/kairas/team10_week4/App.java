@@ -11,21 +11,20 @@ public class App
     	AppView test = new AppView();
     	
     	System.out.print("총 사용 시간을 입력하세요:");
-    	int time = AppView.inputInt();
+    	int time = test.inputInt();
     	
     	System.out.print("총 사용 회선을 입력하세요:");
-    	int line = AppView.inputInt();
+    	int line = test.inputInt();
     	
     	System.out.print("요금제를 입력하세요(gold, silver)");
-    	String plan = AppView.inputString();
+    	String plan = test.inputString();
     	
     	Calculator cal = new Calculator();
-    	float bill = 0;
+    	double bill = 0;
     	
     	switch (plan) {
     		"gold":
     			bill = cal.goldCost();
-    	
     		"silver":
     			bill = cal.silverCost();
     	}
