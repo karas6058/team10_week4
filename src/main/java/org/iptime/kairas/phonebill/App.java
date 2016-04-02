@@ -14,9 +14,9 @@ public class App {
 		LinkedList<Account> account;
 
 		if (args.length == 0) {
-			account = appView.getAccountDataFromFile("input_default.txt");
+			account = (LinkedList<Account>) appView.getAccountDataFromFile("input_default.txt");
 		} else {
-			account = appView.getAccountDataFromFile(args[0]);
+			account = (LinkedList<Account>) appView.getAccountDataFromFile(args[0]);
 		}
 
 		for (Iterator<Account> it = account.iterator(); it.hasNext();) {
