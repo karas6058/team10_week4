@@ -1,8 +1,8 @@
 package org.iptime.kairas.phonebill;
 
 public abstract class Plan {
-	final static int LINE_AMOUNT_FOR_FAMILY_DISCOUNT = 4;
-	final static double RATE_OF_FAMILY_DISCOUNT = 5.00;
+	static final int LINE_AMOUNT_FOR_FAMILY_DISCOUNT = 4;
+	static final double RATE_OF_FAMILY_DISCOUNT = 5.00;
 	
 	private String planType;
 	private double basicMonthlyRate;
