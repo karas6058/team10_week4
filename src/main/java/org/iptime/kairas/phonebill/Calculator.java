@@ -4,6 +4,7 @@ public class Calculator {
 	private static final int PLAN_AMMOUNT = 2;
 	private static final int GOLD = 0;
 	private static final int SILVER = 1;
+	private static final int LINE_AMOUNT_FOR_FAMILY_DISCOUNT = Plan.LINE_AMOUNT_FOR_FAMILY_DISCOUNT;
 	private double totalCost;
 	private String totalCostFormular;
 	private Plan[] plans;
@@ -27,6 +28,7 @@ public class Calculator {
 	}
 	
 	public void getCost(int minutes, int numberOfLines, Plan plan){
+		
 		if(minutes <= plan.getIncludedMinutes()){
 			totalCost = plan.getBasicMonthlyRate();
 			totalCostFormular = Double.toString(plan.getBasicMonthlyRate());
@@ -37,7 +39,7 @@ public class Calculator {
 			String excessMinutesFormula =  " + (" + Integer.toString(minutes - plan.getIncludedMinutes()) + "*" + Double.toString(plan.getRatePerExcessMinute()) + ")";
 			totalCostFormular = Double.toString( plan.getBasicMonthlyRate() ) + excessMinutesFormula;
 		}		
-		if(numberOfLines < plan.LINE_AMOUNT_FOR_FAMILY_DISCOUNT){
+		if(numberOfLines < LINE_AMOUNT_FOR_FAMILY_DISCOUNT){
 			totalCost += (numberOfLines-1) * plan.getRatePerAdditionalLine();
 			totalCostFormular += " + (" + Integer.toString(numberOfLines-1) + "*" + Double.toString(plan.getRatePerAdditionalLine()) + ")";
 		}
