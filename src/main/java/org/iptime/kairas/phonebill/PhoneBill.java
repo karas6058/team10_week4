@@ -23,14 +23,15 @@ public class PhoneBill {
 		 * -------------------------------------------- blahblah... (take data
 		 * from calc, account)
 		 */
-		bill.append("-------------------------------------------------------------------------------------------\n");
-		bill.append("|plan| Minutes Used | Number of Lines | Expected Bill                                  | \n");
-		bill.append("-------------------------------------------------------------------------------------------\n");
-		bill.append("|"+account.getPlanType()+ " | " + Integer.toString(account.getMinutesUsed())+ "|"
-					+Integer.toString(account.getNumberOfLines()) +" | " + calc.getTotalCostFormular() + "=" +String.format("%.2f", calc.getTotalCost())+"|");
-		bill.append("-------------------------------------------------------------------------------------------\n");
 		
+		bill.append("\n----------------------------------------------------------------------------------------------------------------------------\n");
+		bill.append("|\tplan\t|\tMinutes Used\t|\tNumber of Lines\t|\tExpected Bill\t\t\t\t\n");
+		bill.append("----------------------------------------------------------------------------------------------------------------------------\n");
+		bill.append("|\t"+account.getPlanType()+ "\t|\t" + Integer.toString(account.getMinutesUsed())+ "\t\t|\t"
+					+Integer.toString(account.getNumberOfLines()) +"\t\t|\t" + calc.getTotalCostFormular() + "=" +String.format("%.2f", calc.getTotalCost())+"\n");
+		bill.append("----------------------------------------------------------------------------------------------------------------------------\n");
 		
+
 		return bill.toString();
 	}
 }
