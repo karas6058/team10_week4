@@ -23,7 +23,6 @@ public class PhoneBill {
 		 * -------------------------------------------- blahblah... (take data
 		 * from calc, account)
 		 */
-<<<<<<< HEAD
 		bill.append("-------------------------------------------------------------------------------------------\n");
 		bill.append("|plan| Minutes Used | Number of Lines | Expected Bill                                  | \n");
 		bill.append("-------------------------------------------------------------------------------------------\n");
@@ -32,8 +31,6 @@ public class PhoneBill {
 		bill.append("-------------------------------------------------------------------------------------------\n");
 		
 		
-=======
->>>>>>> branch 'master' of https://github.com/kairas83/team10_week4.git
 		return bill.toString();
 	}
 }
