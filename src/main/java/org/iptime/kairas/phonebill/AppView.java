@@ -35,7 +35,7 @@ public class AppView {
 				String planType = tokenizer.nextToken();
 				int minuteUsed = Integer.parseInt(tokenizer.nextToken());
 				int numberOfLines = Integer.parseInt(tokenizer.nextToken());
-				dataToReturn.addLast( new Account(planType, minuteUsed, numberOfLines) );
+				dataToReturn.add( new Account(planType, minuteUsed, numberOfLines) );
 			}
 			file.close();
 			input.close();
