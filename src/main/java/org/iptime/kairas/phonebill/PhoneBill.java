@@ -27,7 +27,7 @@ public class PhoneBill {
 		bill.append("|plan| Minutes Used | Number of Lines | Expected Bill                                  | \n");
 		bill.append("-------------------------------------------------------------------------------------------\n");
 		bill.append("|"+account.getPlanType()+ " | " + Integer.toString(account.getMinutesUsed())+ "|"
-					+Integer.toString(account.getNumberOfLines()) +" | " + calc.getTotalCostFormular() + "=" +Double.toString(calc.getTotalCost())+"|");
+					+Integer.toString(account.getNumberOfLines()) +" | " + calc.getTotalCostFormular() + "=" +String.format("%.2f", calc.getTotalCost())+"|");
 		bill.append("-------------------------------------------------------------------------------------------\n");
 		
 		
