@@ -1,9 +1,8 @@
 package org.iptime.kairas.phonebill;
 
-/**
- * Hello world!
- *
- */
+import java.util.Iterator;
+import java.util.LinkedList;
+
 public class App {
 	private App() {
 		// hide empty Constructor
@@ -12,7 +11,7 @@ public class App {
 	public static void main(String[] args) {
 		AppView appView = new AppView();
 		PhoneBill phoneBill = new PhoneBill();
-		Account account[];
+		LinkedList<Account> account;
 
 		if (args.length == 0) {
 			account = appView.getAccountDataFromFile("input_default.txt");
@@ -20,8 +19,8 @@ public class App {
 			account = appView.getAccountDataFromFile(args[0]);
 		}
 
-		for (int i = 0; i < account.length; i++) {
-			phoneBill.setAccount(account[i]);
+		for (Iterator<Account> it = account.iterator(); it.hasNext();) {
+			phoneBill.setAccount(it.next());
 			appView.outputString(phoneBill.getBill());
 		}
 	}
