@@ -1,51 +1,45 @@
 package org.iptime.kairas.phonebill;
 
 public class Calculator {
-	public static final double GOLD = 49.95;
-	public static final double SILVER = 29.95;
-	public static final double GOLD_RATE_PER_ADDITIONAL_LINE = 14.5;
-	public static final double SILVER_RATE_PER_ADDITIONAL_LINE = 21.5;
-	public static final double GOLD_RATE_PER_EXECESS_MINUTES = 0.45;
-	public static final double SILVER_RATE_PER_EXECESS_MINUTES = 0.54;
-	public static final double FAMILY_DISCOUNT = 5;
-	
-	public double goldCost(int minutes, int numberOfLines){
-		double totalCost;
-		
-		if(minutes<=1000){
-			totalCost = GOLD;
-		} else {
-			totalCost = GOLD + (minutes-1000)*GOLD_RATE_PER_EXECESS_MINUTES;
-		}		
-		if(numberOfLines<4){
-			totalCost = totalCost + (numberOfLines-1)*GOLD_RATE_PER_ADDITIONAL_LINE;
-		} else {
-			totalCost = totalCost + 2*GOLD_RATE_PER_ADDITIONAL_LINE + (numberOfLines-3)*FAMILY_DISCOUNT;
-		}
-		return totalCost;	
-			
+	private final int GOLD = 0;
+	private final int SILVER = 1;
+	private double totalCost;
+	private String totalCostFormular;
+	private Plan[] plans;
+	public Calculator(){
+		plans[0] = new Gold();
+		plans[1] = new Silver();
 	}
 	
-	public double silverCost(int minutes, int numberOfLines){
-		double totalCost;
-			
-		if (minutes > 500)
-		{
-			totalCost = SILVER + (minutes-500)*SILVER_RATE_PER_EXECESS_MINUTES;
+	public void run(Account account){
+		if("gold".equals(account.getPlanType().toLowerCase())){
+			getCost(account.getMinutesUsed(), account.getNumberOfLines(), plans[GOLD]);
+		}
+		else if("silver".equals(account.getPlanType().toLowerCase())){
+			getCost(account.getMinutesUsed(), account.getNumberOfLines(), plans[SILVER]);
 		}
 		else{
-			totalCost = SILVER;
+			totalCost = 0;
+			totalCostFormular = "";
 		}
-		
-		if(numberOfLines < 4)
-		{
-			totalCost += (numberOfLines-1)*SILVER_RATE_PER_ADDITIONAL_LINE;
+	}
+	
+	public void getCost(int minutes, int numberOfLines, Plan plan){
+		if(minutes <= plan.getIncludedMinutes()){
+			totalCost = plan.getBasicMonthlyRate();
+			totalCostFormular = Double.toString(plan.getBasicMonthlyRate());
 		}
-		else{
-			totalCost += SILVER_RATE_PER_ADDITIONAL_LINE*2 + (numberOfLines-3)*FAMILY_DISCOUNT;
+		else {
+			totalCost = plan.getBasicMonthlyRate() + (minutes - plan.getIncludedMinutes()) * plan.getRatePerExcessMinute();
+			totalCostFormular = Double.toString(plan.getBasicMonthlyRate()) + " + (" + Integer.toString(minutes - plan.getIncludedMinutes()) + "*" + Double.toString(plan.getRatePerExcessMinute()) + ")";
+		}		
+		if(numberOfLines < plan.LINE_AMOUNT_FOR_FAMILY_DISCOUNT){
+			totalCost += (numberOfLines-1) * plan.getRatePerAdditionalLine();
+			totalCostFormular += " + (" + Integer.toString(numberOfLines-1) + "*" + Double.toString(plan.getRatePerAdditionalLine()) + ")";
 		}
-		
-				
-		return totalCost;
+		else {
+			totalCost += (plan.LINE_AMOUNT_FOR_FAMILY_DISCOUNT -1) * plan.getRatePerAdditionalLine() + (numberOfLines - plan.LINE_AMOUNT_FOR_FAMILY_DISCOUNT + 1) * plan.getRatePerAdditionalLine();
+			totalCostFormular += " + (" + Integer.toString(plan.LINE_AMOUNT_FOR_FAMILY_DISCOUNT -1) + "*" + Double.toString(plan.getRatePerAdditionalLine()) + ") + (" + Integer.toString(numberOfLines - plan.LINE_AMOUNT_FOR_FAMILY_DISCOUNT + 1) + "*" + Double.toString(plan.RATE_OF_FAMILY_DISCOUNT) + ")";
+		}
 	}
 }

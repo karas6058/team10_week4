@@ -16,26 +16,26 @@ public class Account {
 	}
 	
 	public int getNumberOfLines(){
-		
+		return numberOfLines;
 	}
 	
 	public void setNumberOfLines(int aNumberOfLines){
-		
+		numberOfLines = aNumberOfLines;
 	}
 	
 	public int getMinutesUsed(){
-		
+		return minutesUsed;
 	}
 	
 	public void setMinutesUsed(int aMinutesUsed){
-		
+		minutesUsed = aMinutesUsed;
 	}
 	
 	public String getPlanType(){
-		
+		return planType;
 	}
 	
 	public void setPlanType(String aPlanType){
-		
+		planType = aPlanType;
 	}
 }
