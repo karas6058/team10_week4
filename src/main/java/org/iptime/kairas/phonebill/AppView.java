@@ -43,7 +43,7 @@ public class AppView {
 		}catch(Exception e){
 			logger.log(Level.INFO, e.toString());
 		}finally{
-			logger.log(Level.INFO, "ERROR : WHILE READING FILE")
+			logger.log(Level.INFO, "ERROR : WHILE READING FILE");
 		}
 		return dataToReturn;
 	}
