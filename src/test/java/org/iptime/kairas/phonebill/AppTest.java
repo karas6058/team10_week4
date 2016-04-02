@@ -35,7 +35,4 @@ public class AppTest
     {
         assertTrue( true );
     }
-    
-    public void testCuteCase(){
-	}
 }
