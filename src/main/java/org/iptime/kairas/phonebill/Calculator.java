@@ -14,10 +14,10 @@ public class Calculator {
 	}
 	
 	public void run(Account account){
-		if("gold".equals(account.getPlanType().toLowerCase())){
+		if("gold".equalsIgnoreCase(account.getPlanType())){
 			getCost(account.getMinutesUsed(), account.getNumberOfLines(), plans[GOLD]);
 		}
-		else if("silver".equals(account.getPlanType().toLowerCase())){
+		else if("silver".equalsIgnoreCase(account.getPlanType())){
 			getCost(account.getMinutesUsed(), account.getNumberOfLines(), plans[SILVER]);
 		}
 		else{
