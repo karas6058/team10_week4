@@ -26,10 +26,11 @@ public class AppView {
 	
 	private List<Account> parsingFile(String fileName){
 		List<Account> dataToReturn = new LinkedList();
-		try{
+		try(
 			FileInputStream file = new FileInputStream(fileName);
 			BufferedInputStream input = new BufferedInputStream(file);
-			Scanner scanner = new Scanner(input);
+			Scanner scanner = new Scanner(input)
+			){
 			while(scanner.hasNextLine()){
 				StringTokenizer tokenizer = new StringTokenizer(scanner.nextLine(), " ");
 				String planType = tokenizer.nextToken();
