@@ -30,9 +30,7 @@ public class PhoneBill {
 					+Integer.toString(account.getNumberOfLines()) +" | " + calc.getTotalCostFormular() + "=" +Double.toString(calc.getTotalCost())+"|");
 		bill.append("-------------------------------------------------------------------------------------------\n");
 		
-		
-=======
->>>>>>> branch 'master' of https://github.com/kairas83/team10_week4.git
+
 		return bill.toString();
 	}
 }
