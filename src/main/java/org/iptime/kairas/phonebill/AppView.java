@@ -41,6 +41,9 @@ public class AppView {
 			file.close();
 			input.close();
 			scanner.close();
+		}catch(RuntimeException e){
+			logger.log(Level.INFO, e.toString());
+			throw e;
 		}catch(Exception e){
 			logger.log(Level.INFO, e.toString());
 			throw new MyException(e.toString());
