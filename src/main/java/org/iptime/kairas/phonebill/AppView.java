@@ -26,10 +26,11 @@ public class AppView {
 	
 	private List<Account> parsingFile(String fileName){
 		List<Account> dataToReturn = new LinkedList();
-		try{
+		try(
 			FileInputStream file = new FileInputStream(fileName);
 			BufferedInputStream input = new BufferedInputStream(file);
-			Scanner scanner = new Scanner(input);
+			Scanner scanner = new Scanner(input)
+			){
 			while(scanner.hasNextLine()){
 				StringTokenizer tokenizer = new StringTokenizer(scanner.nextLine(), " ");
 				String planType = tokenizer.nextToken();
@@ -40,11 +41,21 @@ public class AppView {
 			file.close();
 			input.close();
 			scanner.close();
+		}catch(RuntimeException e){
+			logger.log(Level.INFO, e.toString());
+			throw e;
 		}catch(Exception e){
 			logger.log(Level.INFO, e.toString());
+			throw new MyException(e.toString());
 		}finally{
 			logger.log(Level.INFO, "ERROR : WHILE READING FILE");
 		}
 		return dataToReturn;
+	}
+}
+
+class MyException extends RuntimeException {
+	public MyException(String message) {
+    	super(message);
 	}
 }
