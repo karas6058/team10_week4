@@ -1,9 +1,9 @@
 package org.iptime.kairas.phonebill;
 
 public class Calculator {
-	private final int PLAN_AMMOUNT = 2;
-	private final int GOLD = 0;
-	private final int SILVER = 1;
+	private static final int PLAN_AMMOUNT = 2;
+	private static final int GOLD = 0;
+	private static final int SILVER = 1;
 	private double totalCost;
 	private String totalCostFormular;
 	private Plan[] plans;
