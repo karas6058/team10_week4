@@ -32,16 +32,18 @@ public class Calculator {
 			totalCostFormular = Double.toString(plan.getBasicMonthlyRate());
 		}
 		else {
-			totalCost = plan.getBasicMonthlyRate() + (minutes - plan.getIncludedMinutes()) * plan.getRatePerExcessMinute();
-			totalCostFormular = Double.toString(plan.getBasicMonthlyRate()) + " + (" + Integer.toString(minutes - plan.getIncludedMinutes()) + "*" + Double.toString(plan.getRatePerExcessMinute()) + ")";
+			double excessMinutesCost = (minutes - plan.getIncludedMinutes()) * plan.getRatePerExcessMinute();
+			totalCost = plan.getBasicMonthlyRate() + excessMinutesCost;
+			String excessMinutesFormula =  " + (" + Integer.toString(minutes - plan.getIncludedMinutes()) + "*" + Double.toString(plan.getRatePerExcessMinute()) + ")";
+			totalCostFormular = Double.toString( plan.getBasicMonthlyRate() ) + excessMinutesFormula;
 		}		
 		if(numberOfLines < plan.LINE_AMOUNT_FOR_FAMILY_DISCOUNT){
 			totalCost += (numberOfLines-1) * plan.getRatePerAdditionalLine();
 			totalCostFormular += " + (" + Integer.toString(numberOfLines-1) + "*" + Double.toString(plan.getRatePerAdditionalLine()) + ")";
 		}
 		else {
-			totalCost += (plan.LINE_AMOUNT_FOR_FAMILY_DISCOUNT -1) * plan.getRatePerAdditionalLine() + (numberOfLines - plan.LINE_AMOUNT_FOR_FAMILY_DISCOUNT + 1) * plan.getRatePerAdditionalLine();
-			totalCostFormular += " + (" + Integer.toString(plan.LINE_AMOUNT_FOR_FAMILY_DISCOUNT -1) + "*" + Double.toString(plan.getRatePerAdditionalLine()) + ") + (" + Integer.toString(numberOfLines - plan.LINE_AMOUNT_FOR_FAMILY_DISCOUNT + 1) + "*" + Double.toString(plan.RATE_OF_FAMILY_DISCOUNT) + ")";
+			totalCost += (plan.LINE_AMOUNT_FOR_FAMILY_DISCOUNT -2) * plan.getRatePerAdditionalLine() + (numberOfLines - plan.LINE_AMOUNT_FOR_FAMILY_DISCOUNT + 1) * plan.RATE_OF_FAMILY_DISCOUNT;
+			totalCostFormular += " + (" + Integer.toString(plan.LINE_AMOUNT_FOR_FAMILY_DISCOUNT -2) + "*" + Double.toString(plan.getRatePerAdditionalLine()) + ") + (" + Integer.toString(numberOfLines - plan.LINE_AMOUNT_FOR_FAMILY_DISCOUNT + 1) + "*" + Double.toString(plan.RATE_OF_FAMILY_DISCOUNT) + ")";
 		}
 	}
 	
