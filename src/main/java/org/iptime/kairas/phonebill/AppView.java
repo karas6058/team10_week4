@@ -2,13 +2,13 @@ package org.iptime.kairas.phonebill;
 
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
+import java.util.LinkedList;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class AppView {
-	public static final int MAX_ACCOUNT = 1000;
 	private Logger logger;
 	
 	public AppView(){
@@ -19,13 +19,12 @@ public class AppView {
 		logger.log(Level.INFO, output);
 	}
 	
-	public Account[] getAccountDataFromFile(String fileName){
+	public LinkedList<Account> getAccountDataFromFile(String fileName){
 		return parsingFile(fileName);
 	}
 	
-	private Account[] parsingFile(String fileName){
-		Account[] dataToReturn = new Account[MAX_ACCOUNT];
-		int dataIndex = 0;
+	private LinkedList<Account> parsingFile(String fileName){
+		LinkedList<Account> dataToReturn = new LinkedList<Account>();
 		try{
 			FileInputStream file = new FileInputStream(fileName);
 			BufferedInputStream input = new BufferedInputStream(file);
@@ -35,8 +34,7 @@ public class AppView {
 				String planType = tokenizer.nextToken();
 				int minuteUsed = Integer.parseInt(tokenizer.nextToken());
 				int numberOfLines = Integer.parseInt(tokenizer.nextToken());
-				dataToReturn[dataIndex] = new Account(planType, minuteUsed, numberOfLines);
-				dataIndex++;
+				dataToReturn.addLast( new Account(planType, minuteUsed, numberOfLines) );
 			}
 			scanner.close();
 			input.close();
