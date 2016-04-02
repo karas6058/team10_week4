@@ -3,6 +3,7 @@ package org.iptime.kairas.phonebill;
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 import java.util.logging.Level;
@@ -19,11 +20,11 @@ public class AppView {
 		logger.log(Level.INFO, output);
 	}
 	
-	public LinkedList<Account> getAccountDataFromFile(String fileName){
+	public List<Account> getAccountDataFromFile(String fileName){
 		return parsingFile(fileName);
 	}
 	
-	private LinkedList<Account> parsingFile(String fileName){
+	private List<Account> parsingFile(String fileName){
 		LinkedList<Account> dataToReturn = new LinkedList<Account>();
 		try{
 			FileInputStream file = new FileInputStream(fileName);
@@ -40,7 +41,9 @@ public class AppView {
 			input.close();
 			file.close();
 		}catch(Exception e){
-			logger.log(Level.INFO,"ERROR : WHILE READING FILE\n" + e.getStackTrace().toString());
+			logger.log(Level.INFO, e.toString());
+		}finally{
+			logger.log(Level.INFO, "ERROR : WHILE READING FILE")
 		}
 		return dataToReturn;
 	}
