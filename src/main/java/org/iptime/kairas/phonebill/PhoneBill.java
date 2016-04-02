@@ -20,7 +20,7 @@ public class PhoneBill {
 		calc.run(account);
 	}
 	
-	public StringBuilder getBill(){
+	public String getBill(){
 		bill = new StringBuilder();
 		/*make a table about bill with StringBuilder
 		 *--------------------------------------------
@@ -29,5 +29,7 @@ public class PhoneBill {
 		 *blahblah...
 		 *(take data from calc, account)
 		 */
+		
+		return bill.toString();
 	}
 }

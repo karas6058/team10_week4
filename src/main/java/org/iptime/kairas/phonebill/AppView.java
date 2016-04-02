@@ -27,7 +27,7 @@ public class AppView {
 		Account[] dataToReturn = new Account[MAX_ACCOUNT];
 		int dataIndex = 0;
 		try{
-			FileInputStream file = new FileInputStream("input_default.txt");
+			FileInputStream file = new FileInputStream(fileName);
 			BufferedInputStream input = new BufferedInputStream(file);
 			Scanner scanner = new Scanner(input);
 			while(scanner.hasNextLine()){
@@ -36,6 +36,7 @@ public class AppView {
 				int minuteUsed = Integer.parseInt(tokenizer.nextToken());
 				int numberOfLines = Integer.parseInt(tokenizer.nextToken());
 				dataToReturn[dataIndex] = new Account(planType, minuteUsed, numberOfLines);
+				dataIndex++;
 			}
 			scanner.close();
 			input.close();
