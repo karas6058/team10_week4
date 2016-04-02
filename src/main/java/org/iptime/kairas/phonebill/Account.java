@@ -9,10 +9,10 @@ public class Account {
 		//hide empty constructor
 	}
 	
-	public Account(String aPlanType, int aNumberOfLines, int aMinutesUsed){
+	public Account(String aPlanType, int aMinutesUsed, int aNumberOfLines){
 		planType = aPlanType;
-		numberOfLines = aNumberOfLines;
 		minutesUsed = aMinutesUsed;
+		numberOfLines = aNumberOfLines;
 	}
 	
 	public int getNumberOfLines(){
