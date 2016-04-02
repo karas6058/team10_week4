@@ -1,57 +1,44 @@
 package org.iptime.kairas.phonebill;
 
 public abstract class Plan {
-	protected String planType;
-	protected float basicMonthlyRate;
-	protected float ratePerExcessMinute;
-	protected int includedMinutes;
-	protected String Fomula;
+	final static int LINE_AMOUNT_FOR_FAMILY_DISCOUNT = 4;
+	final static double RATE_OF_FAMILY_DISCOUNT = 5.00;
+	
+	private String planType;
+	private double basicMonthlyRate;
+	private double ratePerAdditionalLine;
+	private double ratePerExcessMinute;
+	private int includedMinutes;
 	
 	private Plan(){
 		//hide empty constructor
 	}
 	
-	public Plan(String aPlanType, float basicMonthlyRate, float aRatePerExcessMinute, int aIncludedMinutes, String aFomula){
-		
+	public Plan(String aPlanType, double aBasicMonthlyRate, double aRatePerAdditionalLine, double aRatePerExcessMinute, int aIncludedMinutes){
+		planType = aPlanType;
+		basicMonthlyRate = aBasicMonthlyRate;
+		ratePerAdditionalLine = aRatePerAdditionalLine;
+		ratePerExcessMinute = aRatePerExcessMinute;
+		includedMinutes = aIncludedMinutes;
 	}
 	
 	public String getPlanType(){
-		
-	}
-	
-	public void setPlanType(String aPlan){
-		
+		return planType;
 	}
 	
 	public double getBasicMonthlyRate(){
-		
+		return basicMonthlyRate;
 	}
 	
-	public void setBasicMonthlyRate(){
-		
+	public double getRatePerAdditionalLine(){
+		return ratePerAdditionalLine;
 	}
 	
 	public double getRatePerExcessMinute(){
-		
-	}
-	
-	public void setRatePerExcessMinute(double aRateperExcessMinute){
-		
+		return ratePerExcessMinute;
 	}
 	
 	public int getIncludedMinutes(){
-		
-	}
-	
-	public void setIncludedMinutes(int aIncludedMinutes){
-		
-	}
-	
-	public String getFomula(){
-		
-	}
-	
-	public void setFomula(){
-		
+		return includedMinutes;
 	}
 }

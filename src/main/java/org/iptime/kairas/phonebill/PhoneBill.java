@@ -22,11 +22,12 @@ public class PhoneBill {
 	
 	public StringBuilder getBill(){
 		bill = new StringBuilder();
-		//make string like table about bill with StringBuilder
-		/*--------------------------------------------
+		/*make string like table about bill with StringBuilder
+		 *--------------------------------------------
 		 * plan|munutesUsed|numberOflines|ExpectedBill
 		 *--------------------------------------------
 		 *blahblah...
+		 *(take data from calc)
 		 */
 	}
 }
