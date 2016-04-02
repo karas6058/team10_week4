@@ -37,6 +37,5 @@ public class AppTest
     }
     
     public void testCuteCase(){
-    		Calculator calc = new Calculator();
 	}
 }
