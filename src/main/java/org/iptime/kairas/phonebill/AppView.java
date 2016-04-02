@@ -43,10 +43,16 @@ public class AppView {
 			scanner.close();
 		}catch(Exception e){
 			logger.log(Level.INFO, e.toString());
-			throw new RuntimeException(e);
+			throw new MyException(e.toString());
 		}finally{
 			logger.log(Level.INFO, "ERROR : WHILE READING FILE");
 		}
 		return dataToReturn;
+	}
+}
+
+class MyException extends RuntimeException {
+	public MyException(String message) {
+    	super(message);
 	}
 }
