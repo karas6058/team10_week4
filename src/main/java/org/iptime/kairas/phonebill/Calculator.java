@@ -7,8 +7,8 @@ public class Calculator {
 	private String totalCostFormular;
 	private Plan[] plans;
 	public Calculator(){
-		plans[0] = new Gold();
-		plans[1] = new Silver();
+		plans[GOLD] = new Gold();
+		plans[SILVER] = new Silver();
 	}
 	
 	public void run(Account account){

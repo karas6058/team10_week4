@@ -9,4 +9,8 @@ public class App
 	private App(){
 		//hide empty Constructor
 	}
+	
+	public static void main(String[] args){
+		
+	}
 }
