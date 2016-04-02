@@ -23,7 +23,13 @@ public class PhoneBill {
 		 * -------------------------------------------- blahblah... (take data
 		 * from calc, account)
 		 */
+<<<<<<< HEAD
 
+=======
+		
+		
+		
+>>>>>>> branch 'master' of https://github.com/kairas83/team10_week4.git
 		return bill.toString();
 	}
 }

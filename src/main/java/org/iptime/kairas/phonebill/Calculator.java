@@ -42,4 +42,14 @@ public class Calculator {
 			totalCostFormular += " + (" + Integer.toString(plan.LINE_AMOUNT_FOR_FAMILY_DISCOUNT -1) + "*" + Double.toString(plan.getRatePerAdditionalLine()) + ") + (" + Integer.toString(numberOfLines - plan.LINE_AMOUNT_FOR_FAMILY_DISCOUNT + 1) + "*" + Double.toString(plan.RATE_OF_FAMILY_DISCOUNT) + ")";
 		}
 	}
+	
+	public double getTotalCost()
+	{
+		return totalCost;
+	}
+	
+	public String getTotalCostFormular()
+	{
+		return totalCostFormular;
+	}
 }
