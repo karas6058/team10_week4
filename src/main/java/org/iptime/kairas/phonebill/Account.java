@@ -5,6 +5,16 @@ public class Account {
 	private int minutesUsed;
 	private String planType;
 	
+	private Account(){
+		//hide empty constructor
+	}
+	
+	public Account(String aPlanType, int aNumberOfLines, int aMinutesUsed){
+		planType = aPlanType;
+		numberOfLines = aNumberOfLines;
+		minutesUsed = aMinutesUsed;
+	}
+	
 	public int getNumberOfLines(){
 		
 	}
