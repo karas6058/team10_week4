@@ -25,7 +25,7 @@ public class AppView {
 	}
 	
 	private List<Account> parsingFile(String fileName){
-		LinkedList<Account> dataToReturn = new LinkedList<Account>();
+		List<Account> dataToReturn = new LinkedList();
 		try{
 			FileInputStream file = new FileInputStream(fileName);
 			BufferedInputStream input = new BufferedInputStream(file);
@@ -37,9 +37,9 @@ public class AppView {
 				int numberOfLines = Integer.parseInt(tokenizer.nextToken());
 				dataToReturn.addLast( new Account(planType, minuteUsed, numberOfLines) );
 			}
-			scanner.close();
-			input.close();
 			file.close();
+			input.close();
+			scanner.close();
 		}catch(Exception e){
 			logger.log(Level.INFO, e.toString());
 		}finally{
