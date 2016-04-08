@@ -22,7 +22,7 @@ public abstract class Plan {
 		includedMinutes = aIncludedMinutes;
 	}
 	
-	public String PlanType(){
+	public String planType(){
 		return planType;
 	}
 	
