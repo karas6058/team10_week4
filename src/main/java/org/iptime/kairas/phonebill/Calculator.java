@@ -31,6 +31,7 @@ public class Calculator {
 		}
 	}
 	
+<<<<<<< HEAD
 	private void saveEmptyValue() {
 		totalCost = 0;
 		totalCostFormular = "";
@@ -54,20 +55,27 @@ public class Calculator {
 		if(minutes <= plan.getIncludedMinutes()){
 			totalCost = plan.getBasicMonthlyRate();
 			totalCostFormular = Double.toString(plan.getBasicMonthlyRate());
+=======
+	public void getCost(int minutes, int numberOfLines, Plan plan){
+		
+		if(minutes <= plan.IncludedMinutes()){
+			totalCost = plan.BasicMonthlyRate();
+			totalCostFormular = Double.toString(plan.BasicMonthlyRate());
+>>>>>>> branch 'master' of https://github.com/sanggihong/team10_week4
 		}
 		else {
-			double excessMinutesCost = (minutes - plan.getIncludedMinutes()) * plan.getRatePerExcessMinute();
-			totalCost = plan.getBasicMonthlyRate() + excessMinutesCost;
-			String excessMinutesFormula =  " + (" + Integer.toString(minutes - plan.getIncludedMinutes()) + "*" + Double.toString(plan.getRatePerExcessMinute()) + ")";
-			totalCostFormular = Double.toString( plan.getBasicMonthlyRate() ) + excessMinutesFormula;
+			double excessMinutesCost = (minutes - plan.IncludedMinutes()) * plan.RatePerExcessMinute();
+			totalCost = plan.BasicMonthlyRate() + excessMinutesCost;
+			String excessMinutesFormula =  " + (" + Integer.toString(minutes - plan.IncludedMinutes()) + "*" + Double.toString(plan.RatePerExcessMinute()) + ")";
+			totalCostFormular = Double.toString( plan.BasicMonthlyRate() ) + excessMinutesFormula;
 		}		
 		if(numberOfLines < Plan.LINE_AMOUNT_FOR_FAMILY_DISCOUNT){
-			totalCost += (numberOfLines-1) * plan.getRatePerAdditionalLine();
-			totalCostFormular += " + (" + Integer.toString(numberOfLines-1) + "*" + Double.toString(plan.getRatePerAdditionalLine()) + ")";
+			totalCost += (numberOfLines-1) * plan.RatePerAdditionalLine();
+			totalCostFormular += " + (" + Integer.toString(numberOfLines-1) + "*" + Double.toString(plan.RatePerAdditionalLine()) + ")";
 		}
 		else {
-			totalCost += (Plan.LINE_AMOUNT_FOR_FAMILY_DISCOUNT -2) * plan.getRatePerAdditionalLine() + (numberOfLines - Plan.LINE_AMOUNT_FOR_FAMILY_DISCOUNT + 1) * Plan.RATE_OF_FAMILY_DISCOUNT;
-			totalCostFormular += " + (" + Integer.toString(Plan.LINE_AMOUNT_FOR_FAMILY_DISCOUNT -2) + "*" + Double.toString(plan.getRatePerAdditionalLine()) + ") + (" + Integer.toString(numberOfLines - Plan.LINE_AMOUNT_FOR_FAMILY_DISCOUNT + 1) + "*" + Double.toString(Plan.RATE_OF_FAMILY_DISCOUNT) + ")";
+			totalCost += (Plan.LINE_AMOUNT_FOR_FAMILY_DISCOUNT -2) * plan.RatePerAdditionalLine() + (numberOfLines - Plan.LINE_AMOUNT_FOR_FAMILY_DISCOUNT + 1) * Plan.RATE_OF_FAMILY_DISCOUNT;
+			totalCostFormular += " + (" + Integer.toString(Plan.LINE_AMOUNT_FOR_FAMILY_DISCOUNT -2) + "*" + Double.toString(plan.RatePerAdditionalLine()) + ") + (" + Integer.toString(numberOfLines - Plan.LINE_AMOUNT_FOR_FAMILY_DISCOUNT + 1) + "*" + Double.toString(Plan.RATE_OF_FAMILY_DISCOUNT) + ")";
 		}
 	}
 	
