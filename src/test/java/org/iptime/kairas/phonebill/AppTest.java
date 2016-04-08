@@ -1,5 +1,7 @@
 package org.iptime.kairas.phonebill;
 
+import org.junit.Ignore;
+
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -35,7 +37,7 @@ public class AppTest
     {
         assertTrue( true );
     }
-
+    
     public void testCalculate1()
     {
     	Calculator calc = new Calculator();
@@ -50,6 +52,7 @@ public class AppTest
     	calc.run();
     	assertEquals(49.95 ,calc.totalCost(), 0.05);
     }
+    
     public void testPlan(){
     	Plan plan = new Plan("Gold", 49.95, 14.50, 0.45, 1000){};
     	assertEquals("Gold", plan.PlanType());
@@ -58,6 +61,7 @@ public class AppTest
     	assertEquals(0.45, plan.RatePerExcessMinute());
     	assertEquals(1000, plan.IncludedMinutes());	
     	}
+    
     public void testGold(){ 
     	Gold gold = new Gold();
     	assertEquals("Gold", gold.PlanType());
