@@ -22,23 +22,23 @@ public abstract class Plan {
 		includedMinutes = aIncludedMinutes;
 	}
 	
-	public String getPlanType(){
+	public String PlanType(){
 		return planType;
 	}
 	
-	public double getBasicMonthlyRate(){
+	public double BasicMonthlyRate(){
 		return basicMonthlyRate;
 	}
 	
-	public double getRatePerAdditionalLine(){
+	public double RatePerAdditionalLine(){
 		return ratePerAdditionalLine;
 	}
 	
-	public double getRatePerExcessMinute(){
+	public double RatePerExcessMinute(){
 		return ratePerExcessMinute;
 	}
 	
-	public int getIncludedMinutes(){
+	public int IncludedMinutes(){
 		return includedMinutes;
 	}
 }
