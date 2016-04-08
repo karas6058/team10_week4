@@ -20,20 +20,37 @@ public class Calculator {
 	}
 	
 	public void run(){
-		if("gold".equalsIgnoreCase(account.getPlanType())){
-			getCost(account.getMinutesUsed(), account.getNumberOfLines(), plans[GOLD]);
+		if(planIsGold()){
+			calculate(account.getMinutesUsed(), account.getNumberOfLines(), plans[GOLD]);
 		}
-		else if("silver".equalsIgnoreCase(account.getPlanType())){
-			getCost(account.getMinutesUsed(), account.getNumberOfLines(), plans[SILVER]);
+		else if(planIsSilver()){
+			calculate(account.getMinutesUsed(), account.getNumberOfLines(), plans[SILVER]);
 		}
 		else{
-			totalCost = 0;
-			totalCostFormular = "";
+			saveEmptyValue();
 		}
 	}
 	
-	public void getCost(int minutes, int numberOfLines, Plan plan){
-		
+	private void saveEmptyValue() {
+		totalCost = 0;
+		totalCostFormular = "";
+	}
+
+	private boolean planIsGold(){
+		if("gold".equalsIgnoreCase(account.getPlanType())){
+			return true;
+		}
+		return false;
+	}
+	
+	private boolean planIsSilver(){
+		if("silver".equalsIgnoreCase(account.getPlanType())){
+			return true;
+		}
+		return false;
+	}
+	
+	private void calculate(int minutes, int numberOfLines, Plan plan){
 		if(minutes <= plan.getIncludedMinutes()){
 			totalCost = plan.getBasicMonthlyRate();
 			totalCostFormular = Double.toString(plan.getBasicMonthlyRate());
