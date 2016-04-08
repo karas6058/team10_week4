@@ -88,7 +88,42 @@ public class AppTest
     	assertEquals(40.75 ,calc.totalCost(), 0.05);
     }
     
-    public void testPlan(){
+    public void testNumberOfGoldLines1(){
+    	Calculator calc = new Calculator();
+    	calc.setAccount(new Account("gold", 0, 2));
+    	calc.run();
+    	assertEquals(64.45 ,calc.totalCost(), 0.05);
+    }
+    
+    public void testNumberOfGoldLines2(){
+    	Calculator calc = new Calculator();
+    	calc.setAccount(new Account("gold", 0, 3));
+    	calc.run();
+    	assertEquals(78.95 ,calc.totalCost(), 0.05);
+    }
+    
+    public void testNumberOfGoldLines3(){
+    	Calculator calc = new Calculator();
+    	calc.setAccount(new Account("gold", 0, 4));
+    	calc.run();
+    	assertEquals(83.95 ,calc.totalCost(), 0.05);
+    }
+    
+    public void testNumberOfSilverLines1(){
+    	Calculator calc = new Calculator();
+    	calc.setAccount(new Account("silver", 0, 4));
+    	calc.run();
+    	assertEquals(77.95 ,calc.totalCost(), 0.05);
+    }
+    
+    public void testNumberOfSilverLines2(){
+    	Calculator calc = new Calculator();
+    	calc.setAccount(new Account("silver", 0, 5));
+    	calc.run();
+    	assertEquals(82.95 ,calc.totalCost(), 0.05);
+    }
+    
+    public void testMakePlan(){
     	Plan plan = new Plan("Gold", 49.95, 14.50, 0.45, 1000){};
     	assertEquals("Gold", plan.PlanType());
     	assertEquals(49.95, plan.BasicMonthlyRate());
@@ -97,7 +132,7 @@ public class AppTest
     	assertEquals(1000, plan.IncludedMinutes());	
     	}
     
-    public void testGold(){ 
+    public void testMakeGoldPlan(){ 
     	Gold gold = new Gold();
     	assertEquals("Gold", gold.PlanType());
     	assertEquals(49.95, gold.BasicMonthlyRate());
@@ -106,7 +141,7 @@ public class AppTest
     	assertEquals(1000, gold.IncludedMinutes());	    	
     }
     
-    public void testSilver(){ 
+    public void testMakeSilverPlan(){ 
     	Silver silver = new Silver();
     	assertEquals("Silver", silver.PlanType());
     	assertEquals(29.95, silver.BasicMonthlyRate());
