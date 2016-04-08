@@ -38,7 +38,7 @@ public class AppTest
         assertTrue( true );
     }
     
-    public void testCalculate1()
+    public void testGoldMinuteOver1()
     {
     	Calculator calc = new Calculator();
     	calc.setAccount(new Account("gold",999,1));
@@ -46,11 +46,46 @@ public class AppTest
     	assertEquals(49.95 ,calc.totalCost(), 0.05);
     }
     
-    public void testCaculate2(){
+    public void testGoldMinuteOver2(){
     	Calculator calc = new Calculator();
     	calc.setAccount(new Account("gold", 1000, 1));
     	calc.run();
     	assertEquals(49.95 ,calc.totalCost(), 0.05);
+    }
+    
+    public void testGoldMinuteOver3(){
+    	Calculator calc = new Calculator();
+    	calc.setAccount(new Account("gold", 1001, 1));
+    	calc.run();
+    	assertEquals(50.40 ,calc.totalCost(), 0.05);
+    }
+    
+    public void testGoldMinuteOver4(){
+    	Calculator calc = new Calculator();
+    	calc.setAccount(new Account("gold", 1010, 1));
+    	calc.run();
+    	assertEquals(54.45 ,calc.totalCost(), 0.05);
+    }
+    
+    public void testSilverMinuteOver5(){
+    	Calculator calc = new Calculator();
+    	calc.setAccount(new Account("silver", 499, 1));
+    	calc.run();
+    	assertEquals(29.95 ,calc.totalCost(), 0.05);
+    }
+    
+    public void testSilverMinuteOver6(){
+    	Calculator calc = new Calculator();
+    	calc.setAccount(new Account("silver", 500, 1));
+    	calc.run();
+    	assertEquals(29.95 ,calc.totalCost(), 0.05);
+    }
+    
+    public void testSilverMinuteOver7(){
+    	Calculator calc = new Calculator();
+    	calc.setAccount(new Account("silver", 520, 1));
+    	calc.run();
+    	assertEquals(40.75 ,calc.totalCost(), 0.05);
     }
     
     public void testPlan(){
