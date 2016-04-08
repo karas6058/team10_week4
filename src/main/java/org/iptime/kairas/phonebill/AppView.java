@@ -20,7 +20,7 @@ public class AppView {
 		logger.log(Level.INFO, output);
 	}
 	
-	public List<Account> getAccountDataFromFile(String fileName){
+	public List<Account> readFile(String fileName){
 		return parsingFile(fileName);
 	}
 	

@@ -76,7 +76,7 @@ public class Calculator {
 		return totalCost;
 	}
 	
-	public String getTotalCostFormular()
+	public String totalCostFormular()
 	{
 		return totalCostFormular;
 	}
