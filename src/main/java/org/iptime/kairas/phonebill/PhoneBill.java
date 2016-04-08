@@ -11,11 +11,11 @@ public class PhoneBill {
 
 	public void setAccount(Account aAccount) {
 		account = aAccount;
-		calc.run(account);
 	}
 
-	public String getBill() {
+	public String getBillForm() {
 		bill = new StringBuilder();
+		calc.run();
 		/*
 		 * make a table about bill with StringBuilder
 		 * --------------------------------------------
@@ -28,7 +28,7 @@ public class PhoneBill {
 		bill.append("|\tplan\t|\tMinutes Used\t|\tNumber of Lines\t|\tExpected Bill\t\t\t\t\n");
 		bill.append("----------------------------------------------------------------------------------------------------------------------------\n");
 		bill.append("|\t"+account.getPlanType()+ "\t|\t" + Integer.toString(account.getMinutesUsed())+ "\t\t|\t"
-					+Integer.toString(account.getNumberOfLines()) +"\t\t|\t" + calc.getTotalCostFormular() + "=" +String.format("%.2f", calc.getTotalCost())+"\n");
+					+Integer.toString(account.getNumberOfLines()) +"\t\t|\t" + calc.totalCostFormular() + "=" +String.format("%.2f", calc.totalCost())+"\n");
 		bill.append("----------------------------------------------------------------------------------------------------------------------------\n");
 		
 

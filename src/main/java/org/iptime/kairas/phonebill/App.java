@@ -14,14 +14,14 @@ public class App {
 		LinkedList<Account> account;
 
 		if (args.length == 0) {
-			account = (LinkedList<Account>) appView.getAccountDataFromFile("input_default.txt");
+			account = (LinkedList<Account>) appView.readFile("input_default.txt");
 		} else {
-			account = (LinkedList<Account>) appView.getAccountDataFromFile(args[0]);
+			account = (LinkedList<Account>) appView.readFile(args[0]);
 		}
 
 		for (Iterator<Account> it = account.iterator(); it.hasNext();) {
 			phoneBill.setAccount(it.next());
-			appView.outputString(phoneBill.getBill());
+			appView.outputString(phoneBill.getBillForm());
 		}
 	}
 }
