@@ -50,4 +50,21 @@ public class AppTest
     	calc.run();
     	assertEquals(49.95 ,calc.totalCost(), 0.05);
     }
+    public void testPlan(){
+    	Plan plan = new Plan("Gold", 49.95, 14.50, 0.45, 1000){};
+    	assertEquals("Gold", plan.PlanType());
+    	assertEquals(49.95, plan.BasicMonthlyRate());
+    	assertEquals(14.50, plan.RatePerAdditionalLine());
+    	assertEquals(0.45, plan.RatePerExcessMinute());
+    	assertEquals(1000, plan.IncludedMinutes());	
+    	}
+    public void testGold(){
+    	Gold gold = new Gold();
+    	assertEquals("Gold", gold.PlanType());
+    	assertEquals(49.95, gold.BasicMonthlyRate());
+    	assertEquals(14.50, gold.RatePerAdditionalLine());
+    	assertEquals(0.45, gold.RatePerExcessMinute());
+    	assertEquals(1000, gold.IncludedMinutes());	
+    	
+    }
 }
