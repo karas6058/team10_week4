@@ -149,4 +149,12 @@ public class AppTest
     	assertEquals(0.54, silver.ratePerExcessMinute());
     	assertEquals(500, silver.includedMinutes());	    	
     }
+    
+    public void testAccount(){
+    	Account account = new Account("gold",1000,3);
+    	assertEquals("gold", account.planType());
+    	assertEquals(1000, account.minutesUsed());
+    	assertEquals(3, account.numberOfLines());
+    	
+    }
 }

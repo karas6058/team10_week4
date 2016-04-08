@@ -21,10 +21,10 @@ public class Calculator {
 	
 	public void run(){
 		if(planIsGold()){
-			calculate(account.getMinutesUsed(), account.getNumberOfLines(), plans[GOLD]);
+			calculate(account.minutesUsed(), account.numberOfLines(), plans[GOLD]);
 		}
 		else if(planIsSilver()){
-			calculate(account.getMinutesUsed(), account.getNumberOfLines(), plans[SILVER]);
+			calculate(account.minutesUsed(), account.numberOfLines(), plans[SILVER]);
 		}
 		else{
 			saveEmptyValue();
@@ -37,14 +37,14 @@ public class Calculator {
 	}
 
 	private boolean planIsGold(){
-		if("gold".equalsIgnoreCase(account.getPlanType())){
+		if("gold".equalsIgnoreCase(account.planType())){
 			return true;
 		}
 		return false;
 	}
 	
 	private boolean planIsSilver(){
-		if("silver".equalsIgnoreCase(account.getPlanType())){
+		if("silver".equalsIgnoreCase(account.planType())){
 			return true;
 		}
 		return false;
