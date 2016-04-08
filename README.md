@@ -1,40 +1,32 @@
 #TEAM10 WEEk4
-===========================================
 ##MEMBER|(username)
----------|------------
-Bark WonHo|(kairas83)
-Hong SangGi|(sanggihong)
-Yoon HyunGyu|(yoonhg)
-Choi HyunWoo|(chw1787)
+--------------------------------
+* Bark WonHo	|	(kairas83)
+* Hong SangGi	|	(sanggihong)
+* Yoon HyunGyu	|	(yoonhg)
+* Choi HyunWoo	|	(chw1787)
+--------------------------------
 
 ##실행방법
 이 프로그램은 하나의 argument 입력 또는 입력이 없음을 전제하고있습니다.
 
 argument값은 입력받을 텍스트파일의 이름입니다.
-
-입력이 없을 때 디폴트값은 ```input_default.txt```입니다.
+입력이 없을 때 디폴트값은``input_default.txt``입니다.
 
 해당 텍스트파일의 내용은 plan, 사용한 시간, 회선 수가 순서대로 공백으로 나뉘어져있어야 하며,
-
 한 줄당 하나의 account정보임을 전제하고있습니다.
 
-예시) ```input_default.txt```의 내용
-
+예시) ``input_default.txt``의 내용
 gold 878 4
-
 gold 1123 1
-
 gold 1123 4
-
 silver 523 2
-
 silver 44 5
-
 silver 521 5
 
 입력으로 줄 텍스트파일은 프로젝트폴더 최상위에 존재해야합니다
 
-phonebill
+`phonebill`
 
 	├**your textfile**
 	
@@ -55,9 +47,11 @@ phonebill
 	  └test
 	  
 ##실행 명령어
-argument 입력 없을 때``` mvn exec:java -Dexec.mainClass="org.iptime.kairas.phonebill.App"``` 
-argument 입력 있을 때``` mvn exec:java -Dexec.mainClass="org.iptime.kairas.phonebill.App" -Dexec.args="filename.txt"```
+argument 입력 없을 때 `mvn exec:java -Dexec.mainClass="org.iptime.kairas.phonebill.App"`
 
+argument 입력 있을 때 `mvn exec:java -Dexec.mainClass="org.iptime.kairas.phonebill.App" -Dexec.args="filename.txt"`
+
+================================================================================================
 ##과정상세
 
 ###전화 요금 조회 프로그램
@@ -79,4 +73,9 @@ Calculator와 Account에 저장된 정보들을 토대로 고지서를 구성합
 
 * Plan은 정보들을 갖게 될 부모 클래스입니다.
 각각 Plan 정보들에 대한 값은 자식 클래스인 Gold, Silver 선언시 입력됩니다.
-Calculator는 내부 인자로 Plan의 자식 클래스당, 해당 객체 하나를 소유하고있어야합니다. 
+Calculator는 내부 인자로 Plan의 자식 클래스당, 해당 객체 하나를 소유하고있어야합니다.
+
+===============================================================================================
+ 
+  
+
