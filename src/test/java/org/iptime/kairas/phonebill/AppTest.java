@@ -125,7 +125,7 @@ public class AppTest
     
     public void testMakePlan(){
     	Plan plan = new Plan("Gold", 49.95, 14.50, 0.45, 1000){};
-    	assertEquals("Gold", plan.PlanType());
+    	assertEquals("Gold", plan.planType());
     	assertEquals(49.95, plan.basicMonthlyRate());
     	assertEquals(14.50, plan.ratePerAdditionalLine());
     	assertEquals(0.45, plan.ratePerExcessMinute());
@@ -134,7 +134,7 @@ public class AppTest
     
     public void testMakeGoldPlan(){ 
     	Gold gold = new Gold();
-    	assertEquals("Gold", gold.PlanType());
+    	assertEquals("Gold", gold.planType());
     	assertEquals(49.95, gold.basicMonthlyRate());
     	assertEquals(14.50, gold.ratePerAdditionalLine());
     	assertEquals(0.45, gold.ratePerExcessMinute());
@@ -143,7 +143,7 @@ public class AppTest
     
     public void testMakeSilverPlan(){ 
     	Silver silver = new Silver();
-    	assertEquals("Silver", silver.PlanType());
+    	assertEquals("Silver", silver.planType());
     	assertEquals(29.95, silver.basicMonthlyRate());
     	assertEquals(21.50, silver.ratePerAdditionalLine());
     	assertEquals(0.54, silver.ratePerExcessMinute());
