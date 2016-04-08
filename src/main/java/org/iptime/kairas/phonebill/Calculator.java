@@ -7,13 +7,19 @@ public class Calculator {
 	private double totalCost;
 	private String totalCostFormular;
 	private Plan[] plans;
+	private Account account;
+	
 	public Calculator(){
 		plans = new Plan[PLAN_AMMOUNT];
 		plans[GOLD] = new Gold();
 		plans[SILVER] = new Silver();
 	}
 	
-	public void run(Account account){
+	public void setAccount(Account aAccount){
+		account = aAccount;
+	}
+	
+	public void run(){
 		if("gold".equalsIgnoreCase(account.getPlanType())){
 			getCost(account.getMinutesUsed(), account.getNumberOfLines(), plans[GOLD]);
 		}
@@ -48,7 +54,7 @@ public class Calculator {
 		}
 	}
 	
-	public double getTotalCost()
+	public double totalCost()
 	{
 		return totalCost;
 	}
