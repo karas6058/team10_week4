@@ -31,7 +31,6 @@ public class Calculator {
 		}
 	}
 	
-<<<<<<< HEAD
 	private void saveEmptyValue() {
 		totalCost = 0;
 		totalCostFormular = "";
@@ -51,17 +50,10 @@ public class Calculator {
 		return false;
 	}
 	
-	private void calculate(int minutes, int numberOfLines, Plan plan){
-		if(minutes <= plan.getIncludedMinutes()){
-			totalCost = plan.getBasicMonthlyRate();
-			totalCostFormular = Double.toString(plan.getBasicMonthlyRate());
-=======
-	public void getCost(int minutes, int numberOfLines, Plan plan){
-		
+	public void calculate(int minutes, int numberOfLines, Plan plan){
 		if(minutes <= plan.IncludedMinutes()){
 			totalCost = plan.BasicMonthlyRate();
 			totalCostFormular = Double.toString(plan.BasicMonthlyRate());
->>>>>>> branch 'master' of https://github.com/sanggihong/team10_week4
 		}
 		else {
 			double excessMinutesCost = (minutes - plan.IncludedMinutes()) * plan.RatePerExcessMinute();
