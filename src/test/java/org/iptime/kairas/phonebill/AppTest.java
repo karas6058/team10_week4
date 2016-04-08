@@ -126,27 +126,27 @@ public class AppTest
     public void testMakePlan(){
     	Plan plan = new Plan("Gold", 49.95, 14.50, 0.45, 1000){};
     	assertEquals("Gold", plan.PlanType());
-    	assertEquals(49.95, plan.BasicMonthlyRate());
-    	assertEquals(14.50, plan.RatePerAdditionalLine());
-    	assertEquals(0.45, plan.RatePerExcessMinute());
-    	assertEquals(1000, plan.IncludedMinutes());	
+    	assertEquals(49.95, plan.basicMonthlyRate());
+    	assertEquals(14.50, plan.ratePerAdditionalLine());
+    	assertEquals(0.45, plan.ratePerExcessMinute());
+    	assertEquals(1000, plan.includedMinutes());	
     	}
     
     public void testMakeGoldPlan(){ 
     	Gold gold = new Gold();
     	assertEquals("Gold", gold.PlanType());
-    	assertEquals(49.95, gold.BasicMonthlyRate());
-    	assertEquals(14.50, gold.RatePerAdditionalLine());
-    	assertEquals(0.45, gold.RatePerExcessMinute());
-    	assertEquals(1000, gold.IncludedMinutes());	    	
+    	assertEquals(49.95, gold.basicMonthlyRate());
+    	assertEquals(14.50, gold.ratePerAdditionalLine());
+    	assertEquals(0.45, gold.ratePerExcessMinute());
+    	assertEquals(1000, gold.includedMinutes());	    	
     }
     
     public void testMakeSilverPlan(){ 
     	Silver silver = new Silver();
     	assertEquals("Silver", silver.PlanType());
-    	assertEquals(29.95, silver.BasicMonthlyRate());
-    	assertEquals(21.50, silver.RatePerAdditionalLine());
-    	assertEquals(0.54, silver.RatePerExcessMinute());
-    	assertEquals(500, silver.IncludedMinutes());	    	
+    	assertEquals(29.95, silver.basicMonthlyRate());
+    	assertEquals(21.50, silver.ratePerAdditionalLine());
+    	assertEquals(0.54, silver.ratePerExcessMinute());
+    	assertEquals(500, silver.includedMinutes());	    	
     }
 }
