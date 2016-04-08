@@ -64,7 +64,15 @@ public class AppTest
     	assertEquals(49.95, gold.BasicMonthlyRate());
     	assertEquals(14.50, gold.RatePerAdditionalLine());
     	assertEquals(0.45, gold.RatePerExcessMinute());
-    	assertEquals(1000, gold.IncludedMinutes());	
-    	
+    	assertEquals(1000, gold.IncludedMinutes());	    	
+    }
+    
+    public void testSilver(){ 
+    	Silver silver = new Silver();
+    	assertEquals("Silver", silver.PlanType());
+    	assertEquals(29.95, silver.BasicMonthlyRate());
+    	assertEquals(21.50, silver.RatePerAdditionalLine());
+    	assertEquals(0.54, silver.RatePerExcessMinute());
+    	assertEquals(500, silver.IncludedMinutes());	    	
     }
 }
