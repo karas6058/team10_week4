@@ -35,4 +35,19 @@ public class AppTest
     {
         assertTrue( true );
     }
+
+    public void testCalculate1()
+    {
+    	Calculator calc = new Calculator();
+    	calc.setAccount(new Account("gold",999,1));
+    	calc.run();
+    	assertEquals(49.95 ,calc.totalCost(), 0.05);
+    }
+    
+    public void testCaculate2(){
+    	Calculator calc = new Calculator();
+    	calc.setAccount(new Account("gold", 1000, 1));
+    	calc.run();
+    	assertEquals(49.95 ,calc.totalCost(), 0.05);
+    }
 }
