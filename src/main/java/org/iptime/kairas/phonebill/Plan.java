@@ -26,19 +26,19 @@ public abstract class Plan {
 		return planType;
 	}
 	
-	public double BasicMonthlyRate(){
+	public double basicMonthlyRate(){
 		return basicMonthlyRate;
 	}
 	
-	public double RatePerAdditionalLine(){
+	public double ratePerAdditionalLine(){
 		return ratePerAdditionalLine;
 	}
 	
-	public double RatePerExcessMinute(){
+	public double ratePerExcessMinute(){
 		return ratePerExcessMinute;
 	}
 	
-	public int IncludedMinutes(){
+	public int includedMinutes(){
 		return includedMinutes;
 	}
 }
